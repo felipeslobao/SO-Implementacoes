@@ -1,4 +1,4 @@
-Implementações de Sistemas Operacionais
+*Implementações de Sistemas Operacionais*
 
 Este repositório contém a resolução de uma lista de atividades focadas em conceitos de sistemas operacionais, utilizando CoffeeScript e a biblioteca Stdlib fornecida. Cada programa implementa funcionalidades específicas, descritas a seguir:
 
