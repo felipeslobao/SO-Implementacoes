@@ -7,38 +7,56 @@ else
     dados = []
 
 # Entrada de usuario
-printf "Digite seu usuario" 
+printf "Digite seu usuario: " 
 user = input()
 
 # Limpar terminal
 cls()
 
 # Entrada de senha
-printf "Digite sua senha"
+printf "Digite sua senha: "
 senha = hash_md5(input_password('*'))
 
 # Limpar terminal
 cls()
 
-# variavel auxiliar
+# Variavel aux
 aux = -1
 
 # Verifica login
 for i in dados
+    aux++
     if i.usuario == user && i.senha_hash == senha
-        aux++
         printf "Login concluído com sucesso"
         printf ""
-        # exclusão de conta
+     
+        # Pergunta sobre exclusão
         printf "Você quer excluir sua conta? 'y' para Sim e 'n' para Não"
         op = input()
-        if op == 'y' || 'Y'
-            dados.delete(aux)
-            printf "posição vetorial: %d",  aux
-        
-            printf "Sua conta foi excluida"
-        else 
-            printf "Tudo bem, sua conta não foi excluída"
 
-    else 
-        printf "Nome e/ou senha inválida, tente novamente!! "
+            # opção Y(Sim)
+        if op == 'y' or op == 'Y'
+
+            # Exclui conta
+            dados.splice(aux, 1)
+            cls()
+            printf "Sua conta foi excluída com sucesso."
+
+            # Atualiza o arq
+            save_yaml 'contas.yaml', dados
+            break
+
+            # Opção N(Não)
+        if op == 'n' or op == 'N'
+            cls()
+            printf "Tudo bem, sua conta não foi excluída."
+            break
+        # Caso a pessoa digite uma letra não correspondente
+        else
+        printf "Essa opção não existe, tente novamente!!"
+        
+        
+
+
+    else
+    printf "Nome e/ou senha inválida, tente novamente!!"
