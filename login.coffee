@@ -23,8 +23,12 @@ cls()
 
 # Verificação de login
 for i in dados
-  if i.usuario == usuario && i.senha_hash == senha
+  if i.usuario is usuario and i.senha_hash is senha
+  
     printf " Bem-vindo(a) de volta %s ", usuario
+    break
   else 
-    printf " Este usuário não existe, tente novamente. "
+    printf " Este usuário não existe, tente novamente."
+    break
+    
 

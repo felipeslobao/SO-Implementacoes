@@ -26,7 +26,7 @@ aux = -1
 # Verifica login
 for i in dados
     aux++
-    if i.usuario == user && i.senha_hash == senha
+    if i.usuario is user and i.senha_hash is senha
         printf "Login concluído com sucesso"
         printf ""
      
@@ -35,7 +35,7 @@ for i in dados
         op = input()
 
             # opção Y(Sim)
-        if op == 'y' or op == 'Y'
+        if op is 'y' or op is 'Y'
 
             # Exclui conta
             dados.splice(aux, 1)
@@ -47,7 +47,7 @@ for i in dados
             break
 
             # Opção N(Não)
-        if op == 'n' or op == 'N'
+        if op is 'n' or op is 'N'
             cls()
             printf "Tudo bem, sua conta não foi excluída."
             break
